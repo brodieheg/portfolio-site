@@ -36,12 +36,15 @@
 }
 .knife-image:hover .bottle-opener {
   transform: rotate(-70deg);
+  transition-delay:0.7s;
 }
 .knife-image:hover .saw {
   transform: rotate(70deg);
+  transition-delay:0.4s;
 }
 .knife-image:hover .scissors {
   transform: rotate(70deg);
+  transition-delay:0.25s;
 }
 
 
