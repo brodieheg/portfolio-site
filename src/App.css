@@ -9,6 +9,9 @@
   flex-direction: row;
 }
 
+#bio{
+  margin-left: 1em;
+}
 
 .logo {
   height: 18em;
@@ -24,49 +27,69 @@
 }
 
 .knife-image{
-  position: relative;
   width: 75%;
-  min-height: 50vh;
+  height: 200px;
   max-width: 100vw;
+  position: relative;
+  margin-top: 3em;
+}
+
+.right-container{
+  min-height: 75vh;
 
 }
 
-.knife-image:hover .knife {
+.right-container:hover .knife {
   transform: rotate(-70deg);
 }
-.knife-image:hover .bottle-opener {
+
+.right-container:hover .bottle-opener {
   transform: rotate(-70deg);
   transition-delay:0.7s;
 }
-.knife-image:hover .saw {
+.right-container:hover .saw {
   transform: rotate(70deg);
   transition-delay:0.4s;
 }
-.knife-image:hover .scissors {
+.right-container:hover .scissors {
   transform: rotate(70deg);
   transition-delay:0.25s;
 }
 
+.knife-text{
+  position: absolute;
+  color: white;
+}
 
+
+.swissArmy-container{
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .svg{
   position: absolute;
-  top: 100px;
   transition: transform 0.25s ease-out;
 }
 
-.swissArmy{
-width: 100%
+
+.tool-link{
+  width: 70%;
 }
 
-.tool{
-  width: 65%;
-}
 
 .knife{
   transform-origin: left;
   left: 2em;
 }
+
 
 .saw{
   transform-origin: left;
