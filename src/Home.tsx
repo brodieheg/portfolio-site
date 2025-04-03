@@ -23,7 +23,7 @@ function Home() {
       </div>
       <div className='right-container'>
         <h1>Hello, my name is Brodie</h1>
-        <h3 id="bio">I'm a Sales Operations and Enablement leader <br></br>And a GTM Swiss Army Knife</h3>
+        <h3 id="bio">I'm a Sales Operations and Enablement leader. <br></br>And a GTM Swiss Army Knife.</h3>
       <div className='knife-image'>
           <div className='swissArmy-container'>
             <a data-text = "data text" href = "/revenue-operations" className = "tool-link knife svg" onMouseEnter={() => handleHover("Revenue Operations")} onMouseLeave={() => handleHover(defaultText)}>
