@@ -1,5 +1,3 @@
-
-
 import swissArmyKnife from './assets/SwissArmy.svg'
 import knife from './assets/Knife.svg'
 import saw from './assets/Saw.svg'
@@ -16,7 +14,8 @@ function Home() {
     setText(text);
   }
   return (
-    <div className='container'>
+    <div className = "container">
+      <div className='container'>
       <div className = "left-container">
           <a href="https://www.linkedin.com/in/brodieheginbotham/" target="_blank">
             <img src={headshot} className="logo" alt="headshot" />
@@ -24,7 +23,7 @@ function Home() {
       </div>
       <div className='right-container'>
         <h1>Hello, my name is Brodie</h1>
-        <h3 id="bio">I'm a Sales Operations leader, and a GTM Swiss Army Knife</h3>
+        <h3 id="bio">I'm a Sales Operations and Enablement leader <br></br>And a GTM Swiss Army Knife</h3>
       <div className='knife-image'>
           <div className='swissArmy-container'>
             <a data-text = "data text" href = "/revenue-operations" className = "tool-link knife svg" onMouseEnter={() => handleHover("Revenue Operations")} onMouseLeave={() => handleHover(defaultText)}>
@@ -36,7 +35,7 @@ function Home() {
             <a data-text = "data text" href = "/salesforce" className = "tool-link scissors svg"onMouseEnter={() => handleHover("Salesforce")} onMouseLeave={() => handleHover(defaultText)}>
               <img src={scissors}  className="tool" alt="scissors" />
             </a> 
-            <a data-text = "data text" href = "/programming" className = "tool-link bottle-opener svg"onMouseEnter={() => handleHover("Programming")} onMouseLeave={() => handleHover(defaultText)}>
+            <a data-text = "data text" href = "/sales-training" className = "tool-link bottle-opener svg"onMouseEnter={() => handleHover("Sales Training")} onMouseLeave={() => handleHover(defaultText)}>
               <img src={bottleOpener}  className="tool" alt="bottle opener" />
             </a> 
             <img src={swissArmyKnife}  className="swissArmy svg" alt="swiss army knife" />
@@ -45,6 +44,7 @@ function Home() {
       </div>
       </div>
     </div>
+  </div>
   )
 }
 

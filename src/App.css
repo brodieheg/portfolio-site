@@ -4,12 +4,12 @@
   padding: 2rem;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: row;
 }
 
-#bio{
+#bio {
   margin-left: 1em;
 }
 
@@ -26,7 +26,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.knife-image{
+.knife-image {
   width: 75%;
   height: 200px;
   max-width: 100vw;
@@ -34,9 +34,8 @@
   margin-top: 3em;
 }
 
-.right-container{
+.right-container {
   min-height: 75vh;
-
 }
 
 .right-container:hover .knife {
@@ -45,24 +44,23 @@
 
 .right-container:hover .bottle-opener {
   transform: rotate(-70deg);
-  transition-delay:0.7s;
+  transition-delay: 0.7s;
 }
 .right-container:hover .saw {
   transform: rotate(70deg);
-  transition-delay:0.4s;
+  transition-delay: 0.4s;
 }
 .right-container:hover .scissors {
   transform: rotate(70deg);
-  transition-delay:0.25s;
+  transition-delay: 0.25s;
 }
 
-.knife-text{
+.knife-text {
   position: absolute;
   color: white;
 }
 
-
-.swissArmy-container{
+.swissArmy-container {
   position: absolute;
   top: 25%;
   left: 60%;
@@ -74,40 +72,54 @@
   align-items: center;
 }
 
-.svg{
+.svg {
   position: absolute;
   transition: transform 0.25s ease-out;
 }
 
-
-.tool-link{
+.tool-link {
   width: 70%;
+  &:hover{
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
 }
 
 
-.knife{
+
+.knife {
   transform-origin: left;
   left: 2em;
 }
 
-
-.saw{
+.saw {
   transform-origin: left;
   max-width: 65vw;
   left: 2em;
 }
 
-.scissors{
+.scissors {
   transform-origin: right;
   max-width: 65vw;
   right: 3em;
 }
-.bottle-opener{
+.bottle-opener {
   transform-origin: right;
   max-width: 65vw;
   right: 2em;
 }
 
+/* Tool label styles - hidden by default on desktop */
+.tool-label {
+  display: none;
+  position: absolute;
+  font-size: 0;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  pointer-events: none; /* Make sure clicks go through to the tool */
+  transition: transform 0.25s ease-out; /* Match the tool transition */
+  transform-origin: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -121,4 +133,192 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-container, .right-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-container {
+    min-height: auto;
+  }
+
+  .logo {
+    height: 12em;
+    padding: 1em;
+  }
+
+  #bio {
+    margin-left: 0;
+  }
+
+  .knife-image {
+    width: 100%;
+    margin-top: 2em;
+    height: 250px;
+  }
+
+  .swissArmy-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 200px;
+  }
+
+  .tool {
+    width: 80%;
+    height: auto;
+  }
+
+  .swissArmy {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .knife-text {
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* Show tool labels on mobile with better positioning */
+  .tool-label {
+    display: block;
+    font-size: 0.65rem;
+    width: 100%;
+  }
+
+  /* Position each tool label - adjust these values to place inside SVGs */
+  .knife-label {
+    top: 50%;
+    left: 35%;
+    transform: rotate(0deg);
+    width: 60px;
+  }
+
+  .saw-label {
+    top: 50%;
+    left: 35%;
+    transform: rotate(0deg);
+    width: 60px;
+  }
+
+  .scissors-label {
+    top: 50%;
+    right: 35%;
+    transform: rotate(0deg);
+    width: 60px;
+  }
+
+  .bottle-opener-label {
+    top: 50%;
+    right: 35%;
+    transform: rotate(0deg);
+    width: 70px;
+  }
+
+  /* Remove these active styles */
+  .right-container:active .knife-label,
+  .right-container:active .saw-label,
+  .right-container:active .scissors-label,
+  .right-container:active .bottle-opener-label,
+  .right-container:active .knife,
+  .right-container:active .bottle-opener,
+  .right-container:active .saw,
+  .right-container:active .scissors {
+    transform: none;
+  }
+
+  /* Use tools-open class instead for mobile interactions */
+  .tools-open .knife {
+    transform: rotate(-70deg);
+  }
+
+  .tools-open .bottle-opener {
+    transform: rotate(-70deg);
+    transition-delay: 0.7s;
+  }
+
+  .tools-open .saw {
+    transform: rotate(70deg);
+    transition-delay: 0.4s;
+  }
+
+  .tools-open .scissors {
+    transform: rotate(70deg);
+    transition-delay: 0.25s;
+  }
+
+  /* Update label transformations when tools are open */
+  .tools-open .knife-label {
+    transform: rotate(-40deg);
+  }
+
+  .tools-open .saw-label {
+    transform: rotate(60deg);
+  }
+
+  .tools-open .scissors-label {
+    transform: rotate(45deg);
+  }
+
+  .tools-open .bottle-opener-label {
+    transform: rotate(-50deg);
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 10em;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .knife-image {
+    height: 200px;
+  }
+
+  .swissArmy-container {
+    height: 150px;
+  }
+  
+  .knife-text {
+    top: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
+
+  /* Adjust labels for smaller screens */
+  .tool-label {
+    font-size: 0.55rem;
+  }
 }
