@@ -1,7 +1,7 @@
 import swissArmyKnife from './assets/SwissArmy.svg'
 import knife from './assets/Knife.svg'
 import saw from './assets/Saw.svg'
-import bottleOpener from './assets/bottleopener.svg'
+import bottleOpener from './assets/bottle-opener.svg'
 import scissors from './assets/Scissors.svg'
 import headshot from './assets/Headshot.png'
 import './App.css'
