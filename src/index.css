@@ -213,12 +213,29 @@ img {
 /* ---------- Home ---------- */
 
 .hero {
-  padding: 16px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0 24px;
+}
+
+.avatar,
+.headshot {
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold);
+  box-shadow: 0 0 0 4px var(--ink), 6px 6px 0 4px var(--ink);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
 }
 
 .hero-title {
   font-family: var(--pixel);
-  font-size: clamp(20px, 4vw, 34px);
+  font-size: clamp(18px, 4vw, 34px);
   margin: 0 0 12px;
 }
 
@@ -508,9 +525,6 @@ kbd {
 .headshot {
   width: 180px;
   height: 180px;
-  object-fit: cover;
-  border: 4px solid var(--ink);
-  box-shadow: 0 0 0 4px var(--gold), 8px 8px 0 4px var(--ink);
 }
 
 .timeline {
@@ -649,6 +663,13 @@ kbd {
   .headshot {
     width: 140px;
     height: 140px;
+  }
+  .hero {
+    gap: 16px;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
   }
   .stats {
     grid-template-columns: repeat(2, 1fr);
