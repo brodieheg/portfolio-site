@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import headshot from '../assets/Headshot.png';
+import headshot from '../assets/headshot.jpg';
 import { BIO, EDUCATION, EXPERIENCE, LINKEDIN_URL, SKILLS, TOOLBOX } from '../data/career';
 
 export default function About() {

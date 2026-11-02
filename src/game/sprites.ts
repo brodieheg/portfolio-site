@@ -35,25 +35,26 @@ function flip(src: Sprite): Sprite {
 }
 
 /* ---------- Player: Brodie (12x16), facing right ---------- */
+// Dressed like the headshot: tousled brown hair, beard, sage jacket over a white tee, jeans.
 
 const PLAYER_PAL: Palette = {
-  H: '#4a2a12', S: '#f0b386', s: '#d18d5c', G: '#141414',
-  W: '#ffffff', B: '#2f6fd6', P: '#2a2d45', K: '#111111',
+  H: '#5b3a1e', h: '#7a5230', S: '#f2c29a', s: '#d9a07a', E: '#1f2a36',
+  D: '#7a4a26', W: '#ffffff', J: '#9fb3a8', j: '#748a80', P: '#3b4a6b', K: '#4a2f1a',
 };
 
 const HEAD = [
-  '...HHHHHH...',
-  '..HHHHHHHH..',
+  '....hHHh....',
+  '..HHHHHHHh..',
   '..HHSSSSSH..',
-  '..HSGGGGGGS.',
-  '..HSSSSSSs..',
-  '...SSSWWS...',
-  '....SSSS....',
-  '...BBWWBB...',
-  '..BBBBWBBB..',
+  '..HSSESSES..',
+  '..HSSSSSSS..',
+  '..SDDDDDDS..',
+  '...DWWWWD...',
+  '....DDDD....',
+  '..JJWWWWJJ..',
 ];
-const ARMS_DOWN = ['.SBBBBWBBBS.', '.S.BBBBBB.S.'];
-const ARMS_UP = ['SBBBBBWBBBBS', '..BBBBBBBB..'];
+const ARMS_DOWN = ['.JJJjWWjJJJ.', '.SJJjWWjJJS.'];
+const ARMS_UP = ['SJJJjWWjJJJS', '..JJjWWjJJ..'];
 
 const LEGS = {
   stand: ['...PPPPPP...', '...PP..PP...', '...PP..PP...', '...PP..PP...', '..KKK..KKK..'],
