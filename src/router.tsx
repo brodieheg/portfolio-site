@@ -1,19 +1,30 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Salesforce from "./pages/Salesforce";
-import SalesTraining from "./pages/SalesTraining";
-import SalesStrategy from "./pages/SalesStrategy";
-import RevenueOperations from "./pages/RevenueOperations";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+
+// Old skill pages from the previous site now live as sections on /about.
+const LEGACY = {
+  "/salesforce": "salesforce",
+  "/sales-training": "enablement",
+  "/sales-strategy": "gtm-engineering",
+  "/revenue-operations": "gtm-engineering",
+};
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/salesforce" element={<Salesforce />} />
-        <Route path="/sales-training" element={<SalesTraining />} />
-        <Route path="/sales-strategy" element={<SalesStrategy />} />
-        <Route path="/revenue-operations" element={<RevenueOperations />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          {Object.entries(LEGACY).map(([path, id]) => (
+            <Route key={path} path={path} element={<Navigate to={{ pathname: "/about", hash: `#${id}` }} replace />} />
+          ))}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
       </Routes>
     </Router>
   );
